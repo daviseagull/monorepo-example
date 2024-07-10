@@ -12,6 +12,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@monorepo-config/eslint": "workspace:*",
+    "@monorepo-config/typescript": "workspace:*",
     "vite": "^5.3.1",
     "vite-plugin-dts": "^3.9.1",
     "zod": "^3.23.8"
