@@ -1,14 +1,25 @@
 {
+  "name": "monorepo",
+  "packageManager": "pnpm@8.15.6",
   "private": true,
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
+    "prepare": "husky",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck",
-    "prepare": "husky"
+    "typecheck": "turbo run typecheck"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2"
   },
   "devDependencies": {
     "husky": "^9.0.11",
@@ -16,28 +27,17 @@
     "prettier": "^3.2.5",
     "turbo": "^2.0.6"
   },
-  "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
   },
-  "name": "kitchen-sink",
   "lint-staged": {
+    "*.json": [
+      "prettier --write"
+    ],
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix",
       "eslint"
-    ],
-    "*.json": [
-      "prettier --write"
     ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "dependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2"
   }
 }
