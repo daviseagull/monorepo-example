@@ -1,26 +1,11 @@
+import { Button } from '@monorepo/ui/components/ui/button'
 import React from 'react'
-import './styles.css'
-import { CounterButton, Link } from '@monorepo/ui'
 
 function App(): JSX.Element {
   return (
-    <div className="container">
-      <h1 className="title">
-        Admin <br />
-        <span>Kitchen Sink</span>
-      </h1>
-      <CounterButton />
-      <p className="description">
-        Built With{' '}
-        <Link href="https://turbo.build/repo" newTab>
-          Turborepo
-        </Link>
-        {' & '}
-        <Link href="https://vitejs.dev/" newTab>
-          Vite
-        </Link>
-      </p>
-    </div>
+    <main>
+      <Button>Click me</Button>
+    </main>
   )
 }
 
