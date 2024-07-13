@@ -10,7 +10,8 @@
     "lint": "turbo run lint",
     "prepare": "husky",
     "test": "turbo run test",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck",
+    "ui:add": "pnpm --filter @monorepo/ui ui:add"
   },
   "dependencies": {
     "@commitlint/cli": "^19.3.0",

@@ -2,47 +2,40 @@
   "name": "@monorepo/ui",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
-  "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist/**"
-  ],
   "scripts": {
-    "build": "tsup",
-    "clean": "rm -rf dist",
-    "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint src/",
-    "test": "jest"
+    "ui:add": "pnpm dlx shadcn-ui@latest add",
+    "lint": "eslint ."
   },
-  "jest": {
-    "preset": "@monorepo-config/jest/browser"
+  "peerDependencies": {
+    "react": "^18"
   },
   "devDependencies": {
     "@monorepo-config/eslint": "workspace:*",
-    "@monorepo-config/jest": "workspace:*",
     "@monorepo-config/typescript": "workspace:*",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^20.11.24",
-    "@types/react": "^18.2.62",
-    "@types/react-dom": "^18.2.19",
-    "jest": "^29.7.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tsup": "^8.0.2",
-    "typescript": "^5.5.3"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "postcss-load-config": "^6.0.1",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
   },
-  "lint-staged": {
-    "*.json": [
-      "prettier --write"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "eslint"
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.395.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "exports": {
+    "./globals.css": "./src/globals.css",
+    "./postcss.config": "./postcss.config.mjs",
+    "./tailwind.config": "./tailwind.config.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./components/*": [
+      "./src/components/*.tsx",
+      "./src/components/*.ts"
     ]
   }
 }
