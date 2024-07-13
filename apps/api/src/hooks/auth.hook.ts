@@ -4,7 +4,7 @@ import { cognitoUtils } from '../utils/cognito.utils'
 
 export const authHook = async (
   request: FastifyRequest,
-  reply: FastifyReply
+  _reply: FastifyReply
 ) => {
   let token = request.headers.authorization
 

@@ -65,7 +65,7 @@ listeners.forEach((signal) => {
   })
 })
 
-fastify.listen({ port: parsedEnv.PORT }, function (err, address) {
+fastify.listen({ port: parsedEnv.PORT }, function (err, _address) {
   if (err) {
     fastify.log.fatal(err)
     process.exit(1)

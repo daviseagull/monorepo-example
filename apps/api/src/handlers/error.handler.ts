@@ -1,4 +1,5 @@
 import { FastifyError, FastifyReply, FastifyRequest } from 'fastify'
+import { ZodError } from 'zod'
 import { HttpError } from '../models/http-error'
 
 export const errorHandler = (
@@ -13,11 +14,10 @@ export const errorHandler = (
     return
   }
 
-  if (error.code === 'FST_ERR_VALIDATION') {
+  if (error instanceof ZodError) {
     reply.status(400).send({
       statusCode: 400,
       message: 'Bad Request',
-      // @ts-ignore
       issues: error.issues,
     })
     return

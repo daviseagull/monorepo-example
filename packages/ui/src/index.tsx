@@ -1,2 +1,2 @@
-export { Link } from "./link";
-export { CounterButton } from "./counter-button";
+export { Link } from './Link'
+export { CounterButton } from './counter-button'

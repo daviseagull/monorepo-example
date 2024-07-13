@@ -15,10 +15,10 @@
     "@monorepo/ui": "workspace:*"
   },
   "devDependencies": {
+    "@monorepo-config/eslint": "workspace:*",
     "@types/react": "^18.2.62",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
-    "@monorepo-config/eslint": "workspace:*",
     "@monorepo-config/typescript": "workspace:*",
     "typescript": "^5.5.3",
     "vite": "^5.3.3"
