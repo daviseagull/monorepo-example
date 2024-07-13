@@ -2,11 +2,6 @@
   "name": "monorepo",
   "packageManager": "pnpm@8.15.6",
   "private": true,
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
@@ -29,6 +24,11 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
     "*.json": [
