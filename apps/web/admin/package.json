@@ -22,5 +22,15 @@
     "@monorepo-config/typescript": "workspace:*",
     "typescript": "^5.5.3",
     "vite": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "eslint"
+    ]
   }
 }

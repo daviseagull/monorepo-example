@@ -22,7 +22,6 @@
     "@commitlint/config-conventional": "^19.2.2"
   },
   "devDependencies": {
-    "@monorepo-config/eslint": "workspace:*",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.2.5",
