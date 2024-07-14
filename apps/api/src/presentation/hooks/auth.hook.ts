@@ -1,6 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { HttpError } from '../models/http-error'
-import { cognitoUtils } from '../utils/cognito.utils'
 
 export const authHook = async (
   request: FastifyRequest,
@@ -15,12 +14,11 @@ export const authHook = async (
   token = token.replace('Bearer ', '')
 
   try {
-    const payload = await cognitoUtils.getVerifier().verify(token)
-
-    request.user = {
-      cognitoId: payload.sub,
-      id: payload['custom:id'] as string,
-    }
+    // const payload = await cognitoUtils.getVerifier().verify(token)
+    // request.user = {
+    //   cognitoId: payload.sub,
+    //   id: payload['custom:id'] as string,
+    // }
   } catch {
     throw HttpError.unauthorized('Unauthorized')
   }

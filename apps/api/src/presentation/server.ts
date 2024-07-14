@@ -11,11 +11,11 @@ import {
   validatorCompiler,
   ZodTypeProvider,
 } from 'fastify-type-provider-zod'
-import { parsedEnv } from './config/env.config'
-import { logger } from './config/logger.config'
+import { logger } from '../common/config/logger.config'
 import { swaggerConfig } from './config/swagger/swagger.config'
-import { errorHandler } from './handlers/error.handler'
 import { UserRoutes } from './routes/users.routes'
+import { errorHandler } from './handlers/error.handler'
+import { parsedEnv } from '../common/config/env.config'
 
 declare module 'fastify' {
   export interface FastifyRequest {

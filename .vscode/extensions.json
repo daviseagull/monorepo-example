@@ -3,7 +3,6 @@
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
-    "ms-vscode.vscode-typescript-next",
-    "Prisma.prisma"
+    "ms-vscode.vscode-typescript-next"
   ]
 }
