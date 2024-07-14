@@ -10,7 +10,7 @@
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/",
-    "test": "jest --detectOpenHandles"
+    "test": "jest"
   },
   "jest": {
     "preset": "@monorepo-config/jest/node"
