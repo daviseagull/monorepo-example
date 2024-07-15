@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node dist/src/presentation/server.js",
-    "dev": "tsup --watch --onSuccess \"node dist/src/presentation/server.js\"",
+    "start": "node dist/server.js",
+    "dev": "tsup --watch --onSuccess 'node --env-file=.env dist/server.js'",
     "build": "tsup",
     "clean": "rm -rf dist",
     "typecheck": "tsc --noEmit",
@@ -25,11 +25,14 @@
     "@fastify/swagger": "^8.14.0",
     "@fastify/swagger-ui": "^4.0.0",
     "@monorepo/types": "workspace:*",
+    "@monorepo/utils": "workspace:*",
     "aws-jwt-verify": "^4.0.1",
     "fastify": "^4.28.0",
     "fastify-type-provider-zod": "^2.0.0",
+    "inversify": "^6.0.2",
     "mysql2": "^3.10.2",
     "pino": "^9.2.0",
+    "reflect-metadata": "^0.2.2",
     "sequelize": "^6.37.3",
     "zod": "^3.23.8"
   },
@@ -44,7 +47,6 @@
     "pino-pretty": "^11.2.1",
     "supertest": "^6.3.4",
     "tsup": "^8.0.2",
-    "tsx": "^4.15.7",
     "typescript": "^5.5.3"
   },
   "lint-staged": {

@@ -3,20 +3,22 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "module": "./dist/types.js",
-  "main": "./dist/types.js",
-  "types": "./dist/main.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsup"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
   },
   "devDependencies": {
     "@monorepo-config/eslint": "workspace:*",
     "@monorepo-config/typescript": "workspace:*",
+    "tsup": "^8.0.2",
     "typescript": "^5.5.3",
-    "vite": "^5.3.1",
-    "vite-plugin-dts": "^3.9.1",
     "zod": "^3.23.8"
   },
   "lint-staged": {

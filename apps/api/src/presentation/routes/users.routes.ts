@@ -1,23 +1,46 @@
-import { createReplyDtoSchema, KudosDtoSchema } from '@monorepo/types'
+import {
+  createReplyDtoSchema,
+  CreateUserDto,
+  CreateUserDtoSchema,
+  StatusCodes,
+} from '@monorepo/types'
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 import { Tags } from '../config/swagger/swagger-tags'
+import types from '@/application/constants/types'
+import { CreateUserUseCase } from '@/application/use-cases/user/create-user.use-case'
+import container from '@/infrastructure/container/container'
+import { validationUtils } from '../../../../../packages/utils/dist'
 
 export async function UserRoutes(fastify: FastifyInstance) {
-  fastify.get('/ping', async (request: FastifyRequest, reply: FastifyReply) => {
-    return reply.code(200).send({ ping: 'pong' })
-  })
-
   fastify.post(
-    '/test',
+    '/',
     {
       schema: {
         tags: [Tags.USER],
-        body: KudosDtoSchema,
-        response: { 200: createReplyDtoSchema(KudosDtoSchema) },
+        body: CreateUserDtoSchema,
+        response: { 200: createReplyDtoSchema() },
       },
     },
     async (request: FastifyRequest, reply: FastifyReply) => {
-      reply.code(200).send({ hello: 'world' })
+      const useCase: CreateUserUseCase = container.get(
+        types.CREATE_USER_USE_CASE
+      )
+
+      const body = validationUtils.safeParse<CreateUserDto>(
+        request.body,
+        CreateUserDtoSchema
+      )
+
+      if (!body) {
+        return reply.code(500).send()
+      }
+
+      useCase.execute(body)
+
+      reply.code(200).send({
+        status: StatusCodes.Created,
+        message: 'User created successfully',
+      })
     }
   )
 }

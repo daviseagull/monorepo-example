@@ -1,9 +1,12 @@
 {
-  "extends": "@monorepo-config/typescript/base.json",
   "compilerOptions": {
-    "lib": ["ES2015"],
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true
   },
-  "exclude": ["node_modules"],
-  "include": ["."]
+  "exclude": ["dist", "node_modules"]
 }

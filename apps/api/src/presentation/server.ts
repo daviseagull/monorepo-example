@@ -16,6 +16,7 @@ import { swaggerConfig } from './config/swagger/swagger.config'
 import { UserRoutes } from './routes/users.routes'
 import { errorHandler } from './handlers/error.handler'
 import { parsedEnv } from '../common/config/env.config'
+import db from '@/infrastructure/database/sequelize.config'
 
 declare module 'fastify' {
   export interface FastifyRequest {
@@ -56,6 +57,13 @@ fastify.register(UserRoutes, {
 })
 
 fastify.setErrorHandler(errorHandler)
+
+db.authenticate()
+  .then(() => {
+    db.sync({ force: true })
+    logger.info('Connection with DB established successfully')
+  })
+  .catch((err) => logger.error('Unable to connect to the database:', err))
 
 const listeners = ['SIGINT', 'SIGTERM']
 listeners.forEach((signal) => {
