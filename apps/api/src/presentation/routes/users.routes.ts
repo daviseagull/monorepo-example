@@ -32,12 +32,12 @@ export async function UserRoutes(fastify: FastifyInstance) {
       )
 
       if (!body) {
-        return reply.code(500).send()
+        return reply.code(400).send()
       }
 
       useCase.execute(body)
 
-      reply.code(200).send({
+      reply.code(201).send({
         status: StatusCodes.Created,
         message: 'User created successfully',
       })
