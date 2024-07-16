@@ -11,7 +11,9 @@
     "prepare": "husky",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
-    "ui:add": "pnpm --filter @monorepo/ui ui:add"
+    "ui:add": "pnpm --filter @monorepo/ui ui:add",
+    "api": "pnpm --filter @monorepo/api",
+    "admin": "pnpm --filter @monorepo/admin"
   },
   "dependencies": {
     "@commitlint/cli": "^19.3.0",
