@@ -1,6 +1,6 @@
 {
   "name": "@monorepo/api",
-  "description": "Monorepo API TEST",
+  "description": "Monorepo API",
   "version": "0.0.0",
   "private": true,
   "scripts": {

@@ -1,9 +1,0 @@
-{
-  "exclude": ["node_modules"],
-  "extends": "@monorepo-config/typescript/vite.json",
-  "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "dist"
-  },
-  "include": ["src", "vite.config.ts"]
-}
