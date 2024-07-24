@@ -6,7 +6,7 @@
   "main": "./dist/utils.js",
   "types": "./dist/main.d.ts",
   "jest": {
-    "preset": "@monorepo-config/jest/node"
+    "preset": "@monorepo/jest-config/node"
   },
   "scripts": {
     "build": "tsup"
@@ -20,9 +20,9 @@
     "./package.json": "./package.json"
   },
   "devDependencies": {
-    "@monorepo-config/eslint": "workspace:*",
-    "@monorepo-config/jest": "workspace:*",
-    "@monorepo-config/typescript": "workspace:*",
+    "@monorepo/eslint-config": "workspace:*",
+    "@monorepo/jest-config": "workspace:*",
+    "@monorepo/typescript-config": "workspace:*",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.8",
     "@types/supertest": "^6.0.2",

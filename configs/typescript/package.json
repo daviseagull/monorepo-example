@@ -1,9 +1,17 @@
 {
-  "name": "@monorepo-config/typescript",
+  "name": "@monorepo/typescript-config",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
   }
 }

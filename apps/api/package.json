@@ -13,7 +13,7 @@
     "test": "jest"
   },
   "jest": {
-    "preset": "@monorepo-config/jest/node"
+    "preset": "@monorepo/jest-config/node"
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.606.0",
@@ -37,9 +37,10 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@monorepo-config/eslint": "workspace:*",
-    "@monorepo-config/jest": "workspace:*",
-    "@monorepo-config/typescript": "workspace:*",
+    "@swc/core": "^1.7.0",
+    "@monorepo/eslint-config": "workspace:*",
+    "@monorepo/jest-config": "workspace:*",
+    "@monorepo/typescript-config": "workspace:*",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.8",
     "@types/supertest": "^6.0.2",

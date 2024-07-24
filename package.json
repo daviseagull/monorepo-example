@@ -8,30 +8,29 @@
     "dev": "turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
-    "prepare": "husky",
+    "prepare": "husky || true",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck",
     "ui:add": "pnpm --filter @monorepo/ui ui:add",
     "api": "pnpm --filter @monorepo/api",
     "admin": "pnpm --filter @monorepo/admin"
   },
-  "dependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "prettier": "^3.2.5",
     "turbo": "^2.0.6"
   },
-  "engines": {
-    "node": ">=18"
-  },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "engines": {
+    "node": ">=18"
   },
   "lint-staged": {
     "*.json": [

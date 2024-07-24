@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo-config/jest",
+  "name": "@monorepo/jest-config",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -12,5 +12,13 @@
   },
   "devDependencies": {
     "jest-environment-jsdom": "^29.7.0"
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
   }
 }
