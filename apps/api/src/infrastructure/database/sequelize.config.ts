@@ -1,5 +1,5 @@
-import { parsedEnv } from '@/common/config/env.config'
 import { Sequelize } from 'sequelize'
+import { parsedEnv } from '@/common/config/env.config'
 
 const db = new Sequelize(
   parsedEnv.DATABASE_NAME,

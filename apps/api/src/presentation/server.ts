@@ -69,8 +69,8 @@ db.authenticate()
 
 const listeners = ['SIGINT', 'SIGTERM']
 listeners.forEach((signal) => {
-  process.on(signal, async () => {
-    await fastify.close()
+  process.on(signal, () => {
+    void fastify.close()
     process.exit(0)
   })
 })

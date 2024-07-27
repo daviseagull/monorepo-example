@@ -1,10 +1,10 @@
-import { FastifyReply, FastifyRequest } from 'fastify'
+import type { FastifyReply, FastifyRequest } from 'fastify'
 import { HttpError } from '../models/http-error'
 
 export const authHook = async (
   request: FastifyRequest,
   _reply: FastifyReply
-) => {
+): Promise<void> => {
   let token = request.headers.authorization
 
   if (!token && !token?.startsWith('Bearer')) {

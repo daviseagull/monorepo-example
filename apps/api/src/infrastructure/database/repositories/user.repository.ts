@@ -1,10 +1,10 @@
-import { IUserRepository } from '@/application/repositories/user.repository'
-import { User } from '@/domain/entities/user.entity'
-import { UserModel } from '../models/user.model'
 import { injectable } from 'inversify'
+import { UserModel } from '../models/user.model'
+import type { UserRepository } from '@/application/repositories/user.repository'
+import type { User } from '@/domain/entities/user.entity'
 
 @injectable()
-export class UserRepository implements IUserRepository {
+export class UserRepositorySequelize implements UserRepository {
   async findAll(): Promise<User[]> {
     const users = await UserModel.findAll()
     return users.map((user) => user.dataValues)

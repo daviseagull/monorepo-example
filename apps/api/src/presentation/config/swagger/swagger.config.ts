@@ -1,4 +1,4 @@
-import { FastifyDynamicSwaggerOptions } from '@fastify/swagger'
+import type { FastifyDynamicSwaggerOptions } from '@fastify/swagger'
 import { description, name, version } from '../../../../package.json'
 import { SwaggerTags } from './swagger-tags'
 

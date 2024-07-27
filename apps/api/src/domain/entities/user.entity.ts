@@ -1,4 +1,4 @@
-import { InvalidAttributeError } from '../errors/invalid-attribute.error'
+import { InvalidAttributeError } from '../errors'
 import { BaseEntity } from './entity'
 
 export class User extends BaseEntity {
@@ -21,7 +21,7 @@ export class User extends BaseEntity {
     lastName: string,
     id?: number,
     publicId?: string
-  ) {
+  ): User {
     if (firstName.length <= 3 || lastName.length <= 3) {
       throw new InvalidAttributeError(
         'First Name must have at least 3 characters'

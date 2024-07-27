@@ -1,17 +1,17 @@
+import type { CreateUserDto } from '@monorepo/types'
 import {
   createReplyDtoSchema,
-  CreateUserDto,
   CreateUserDtoSchema,
   StatusCodes,
 } from '@monorepo/types'
-import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
+import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
+import { validationUtils } from '@monorepo/utils'
 import { Tags } from '../config/swagger/swagger-tags'
 import types from '@/application/constants/types'
-import { CreateUserUseCase } from '@/application/use-cases/user/create-user.use-case'
+import type { CreateUserUseCase } from '@/application/use-cases/user/create-user.use-case'
 import container from '@/infrastructure/container/container'
-import { validationUtils } from '../../../../../packages/utils/dist'
 
-export async function UserRoutes(fastify: FastifyInstance) {
+export function UserRoutes(fastify: FastifyInstance): void {
   fastify.post(
     '/',
     {
@@ -37,7 +37,7 @@ export async function UserRoutes(fastify: FastifyInstance) {
 
       useCase.execute(body)
 
-      reply.code(201).send({
+      void reply.code(201).send({
         status: StatusCodes.Created,
         message: 'User created successfully',
       })

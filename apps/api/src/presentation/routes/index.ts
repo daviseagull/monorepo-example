@@ -1,11 +1,11 @@
-import { FastifyInstance } from 'fastify'
+import type { FastifyInstance } from 'fastify'
 import { authHook } from '../hooks/auth.hook'
 import { UserRoutes } from './users.routes'
 
-export async function Routes(fastify: FastifyInstance) {
+export async function Routes(fastify: FastifyInstance): Promise<void> {
   fastify.addHook('preHandler', authHook)
 
-  fastify.register(UserRoutes, {
+  await fastify.register(UserRoutes, {
     prefix: '/v1/users',
   })
 }

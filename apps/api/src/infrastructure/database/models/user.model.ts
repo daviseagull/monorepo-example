@@ -1,6 +1,6 @@
-import { User } from '@/domain/entities/user.entity'
 import { DataTypes, Model } from 'sequelize'
 import db from '../sequelize.config'
+import type { User } from '@/domain/entities/user.entity'
 
 export class UserModel extends Model<User> {}
 

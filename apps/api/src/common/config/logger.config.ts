@@ -1,9 +1,9 @@
-import pino from 'pino'
+import { pino } from 'pino'
 import { parsedEnv } from './env.config'
 
 export const logger = pino({
   transport: {
-    level: parsedEnv.LOG_LEVEL || 'info',
+    level: parsedEnv.LOG_LEVEL,
     target: 'pino-pretty',
     options: {
       translateTime: 'SYS:standard',
